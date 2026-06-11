@@ -21,7 +21,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-#define APP_VERSION "2.0.0"
+#define APP_VERSION "2.0.1"
 #define UPDATE_URL "https://raw.githubusercontent.com/kejizhixing/upx-gui-update/refs/heads/main/version.txt"  // GitHub版本检测地址
 #define DOWNLOAD_URL "https://github.com/kejizhixing/upx-gui-update/releases" // GitHub Releases下载地址
 
