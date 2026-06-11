@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UPX GUI - 压缩/解压工具 By： Journeyer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBoxFile">
+      <property name="title">
+       <string>选择文件</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayoutFile">
+       <item>
+        <widget class="QLineEdit" name="txtFilePath">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSelectFile">
+         <property name="text">
+          <string>浏览...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxVersion">
+      <property name="title">
+       <string>选择UPX版本</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayoutVersion">
+       <item>
+        <widget class="QComboBox" name="cmbUpxVersion">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxAction">
+      <property name="title">
+       <string>操作类型</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayoutAction">
+       <item>
+        <widget class="QRadioButton" name="rdoCompress">
+         <property name="text">
+          <string>压缩</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="rdoDecompress">
+         <property name="text">
+          <string>解压</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxAdvanced">
+      <property name="title">
+       <string>高级选项（防误报优化）</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutAdvanced">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayoutPreset">
+         <item>
+          <widget class="QLabel" name="lblPreset">
+           <property name="text">
+            <string>预设方案：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmbPreset">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacerPreset">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayoutParams">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="chkLzma">
+           <property name="text">
+            <string>LZMA算法 (--lzma)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="chkNoCompressExports">
+           <property name="text">
+            <string>不压缩导出表 (--no-compress-exports)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="chkStripRelocs">
+           <property name="text">
+            <string>剥离重定位信息 (--strip-relocs)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QCheckBox" name="chkOverlayCopy">
+           <property name="text">
+            <string>保留附加数据 (--overlay=copy)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="chkBrute">
+           <property name="text">
+            <string>强力压缩 (--brute)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCheckBox" name="chkUltraBrute">
+           <property name="text">
+            <string>极限压缩 (--ultra-brute)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QCheckBox" name="chkNrv2c">
+           <property name="text">
+            <string>NRV2C算法 (--nrv2c)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxInfo">
+      <property name="title">
+       <string>文件信息</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutInfo">
+       <item>
+        <widget class="QLabel" name="lblFileInfo">
+         <property name="text">
+          <string>未选择文件</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxOutput">
+      <property name="title">
+       <string>输出日志</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutOutput">
+       <item>
+        <widget class="QTextEdit" name="txtOutput">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutButtons">
+      <item>
+       <widget class="QLabel" name="lblStatus">
+        <property name="text">
+         <string>状态: 等待选择文件</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblCompressRatio">
+        <property name="text">
+         <string>压缩率: --</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #0066cc; font-weight: bold;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnCheckStatus">
+        <property name="text">
+         <string>检测状态</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExecute">
+        <property name="text">
+         <string>执行</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpenFile"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionUPXWebsite"/>
+    <addaction name="actionUpdateWebsite"/>
+    <addaction name="actionFeedback"/>
+    <addaction name="actionCheckUpdate"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <action name="actionOpenFile">
+    <property name="text">
+     <string>打开文件</string>
+    </property>
+   </action>
+   <action name="actionExit">
+    <property name="text">
+     <string>退出</string>
+    </property>
+   </action>
+   <action name="actionUPXWebsite">
+    <property name="text">
+     <string>UPX 官网</string>
+    </property>
+   </action>
+   <action name="actionUpdateWebsite">
+    <property name="text">
+     <string>更新官网</string>
+    </property>
+   </action>
+   <action name="actionFeedback">
+    <property name="text">
+     <string>留言反馈</string>
+    </property>
+   </action>
+   <action name="actionCheckUpdate">
+    <property name="text">
+     <string>检查更新</string>
+    </property>
+   </action>
+   <action name="actionAbout">
+    <property name="text">
+     <string>关于软件</string>
+    </property>
+   </action>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
